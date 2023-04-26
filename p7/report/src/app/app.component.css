@@ -1,0 +1,62 @@
+* {
+    font-family: '標楷體', '微軟正黑體';
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: #ffffff;   */
+}
+
+header h2 {
+    margin: 30px 0;
+    text-align: center;
+}
+
+table.table-bordered {
+    margin: 0px auto 10px;
+    font-size: 18px;
+}
+
+table.table-bordered tbody tr td {
+    padding:5px;
+}
+
+table.table-bordered tbody tr td.key {
+    background-color:antiquewhite;
+    text-align: center;
+}
+
+table.table-bordered tbody tr td#reason, td#env, td#fmember, td#carestatus{
+    padding-bottom: 10px;
+}
+
+table.table-bordered tbody tr.seperator td {
+    border-left: none;
+    border-right: none;
+    height: 10px;
+}
+
+button.btn {
+    padding: 5px 10px;
+    margin: 10px auto;
+}
+
+/* 列印畫面調整 */
+@media print {
+    table.table-bordered {
+        font-size: 14px;
+    }
+
+    table.table-bordered tbody tr td.key {
+        text-align: left;
+    }
+
+    table.table-bordered tbody tr td.t {
+        text-align: center;
+    }
+
+    button.btn {
+        /* 列印 PDF 不需要看到按鈕 */
+        display: none;
+    }
+}
