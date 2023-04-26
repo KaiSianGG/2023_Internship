@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-
-// import jquery
-declare let $: any;
+import * as $ from 'jquery';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
-export class AppComponent{
-    title = 'report';
+export class AppComponent {
+    title = 'myReport';
 }
 
 // jquery 確保文檔加載完畢才開始我們的 typescript
