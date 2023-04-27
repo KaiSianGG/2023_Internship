@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>序號</th>
+                <th>商店編號</th>
+                <th>商店名稱</th>
+                <th>聯絡地址</th>
+                <th>聯絡電話</th>
+                <th>分機</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of list; let i = index">
+                <td>{{ i+1 }}</td>
+                <td>{{ item['商店編號'] }}</td>
+                <td>{{ item['商店名稱'] }}</td>
+                <td>{{ item['聯絡地址'] }}</td>
+                <td>{{ item['聯絡電話'] }}</td>
+                <td>{{ item['分機'] }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
