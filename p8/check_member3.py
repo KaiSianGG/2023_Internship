@@ -6,7 +6,7 @@
 
 # 可以看到屬於那個委員號、CSV檔案、index
 # 產生檔案target_data2.csv
-# 產生檔案target_data3.csv
+# 楷軒_捐款記錄.csv
 
 import os
 import csv
@@ -49,7 +49,6 @@ def check_member(root_dir, memberId):
                                     writer.writerow(row)
                                     writer.writerow([])
                                 wf.close()
-
 
                         except:
                             continue
