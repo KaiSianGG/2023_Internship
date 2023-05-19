@@ -7,7 +7,7 @@
 import os
 import csv
 
-root_dir = 'CD'
+root_dir = 'CSV'
 target_data = []
 column = "ME_NO"
 memberId = ["N0520064", "X0585070", "X1101825"]
@@ -21,7 +21,7 @@ for folder in os.listdir(root_dir):
         with open (file_path, "rb") as f:
             content = f.read() # 讀取所有内容
             content = content.replace(b'\x00', b'')  # 刪除NUL字元
-            content = content.decode("utf-8-sig", errors="ignore") # 將 byte 轉變陳 str
+            content = content.decode("big5", errors="ignore") # 將 byte 轉變陳 str
             c_reader = csv.DictReader(content.splitlines())
             # list = [r for r in c_reader if r[column] == memberId]
 
