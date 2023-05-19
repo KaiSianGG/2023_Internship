@@ -42,19 +42,20 @@ def check_member(root_dir, memberId):
                                 print(result)
                                 row = list(r.values())
                                 # row.insert(0, memberId)
-                                with open('target_data3.csv', 'a', encoding='big5', newline='', errors='surrogateescape') as wf:
+                                with open('匯整后捐款記錄.csv', 'a', encoding='big5', newline='', errors='surrogateescape') as wf:
                                     writer = csv.writer(wf, delimiter=',')
                                     writer.writerow([result])
                                     writer.writerow(fieldnames)
                                     writer.writerow(row)
                                     writer.writerow([])
                                 wf.close()
-
                         except:
                             continue
                 except PermissionError:
                     print(file_path, "失敗")
                     pass
+
+            f.close()
     if count == 0:
         print("⚠ 沒有找到該委員號的任何資料!")
 
