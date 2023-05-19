@@ -1,5 +1,5 @@
 """ 檢查DBF轉CSV使用 """
-# 完整 - dbf_to_csv2
+# 完整 - dbf_to_csv_complete.py
 
 from dbfread import DBF, FieldParser, InvalidValue
 import csv
@@ -13,11 +13,13 @@ class MyFieldParser(FieldParser):
             return InvalidValue(data)  # 根據你選擇的編碼格式，如果解析出錯，回傳InvalidValue物件
 
 # 使用自定義的FieldParser類別來讀取DBF檔案
+# 一個DBF檔案做轉換CSV
 table = DBF('ALL_CD\\BK242\\852\\tzcol\\COL_E.DBF', parserclass=MyFieldParser, encoding='ANSI')
 
 # 計算有多少資料有誤
 invalid_value_record_count = 0
 
+# 測試轉出來的csv
 with open('test.csv', 'w', encoding="ANSI", newline='') as f:
     writer = csv.writer(f)
     writer.writerow(table.field_names)  # 寫入CSV檔案的欄位名稱

@@ -94,7 +94,7 @@ while True:
                 path = os.path.join(root, cd)
                 print(f"========================================================================\n{idx+1}. {path}")
                 f_list(path)
-            break
+            # break
         else:
             print("儲存CSV目錄不存在\n")
             continue

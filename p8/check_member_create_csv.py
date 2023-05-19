@@ -11,7 +11,7 @@
 import os
 import csv
 
-Id = ["N0520064", "X0585070", "X1101825"]
+Id = ["N0520064", "X0585070", " "]
 
 
 def check_member(root_dir, memberId):
@@ -42,6 +42,8 @@ def check_member(root_dir, memberId):
                            result = f"{count}. ME_NO: {r[column]}, location: {os.path.relpath(file_path, root_dir)}, index: {index+2}" # os.path.relpath = 相對路徑
                            print(result)
                            row = list(r.values())
+                           # csv檔案是添加方式
+                           # csv檔案路徑可修改自己想要的
                            with open('匯整后捐款記錄.csv', 'a', encoding='big5', newline='', errors='surrogateescape') as wf:
                               writer = csv.writer(wf, delimiter=',')
                               writer.writerow([result])
@@ -59,12 +61,28 @@ def check_member(root_dir, memberId):
    if count == 0:
       print("⚠ 沒有找到該委員號的任何資料!")
 
-
-root_dir = 'CSV'
-print(f"csv檔案根目錄為: {root_dir}")
 while True:
+   root_dir = 'miss_CSV' # 更改CSV目錄
+   print(f"csv檔案根目錄為: {root_dir}")
+
    memberId = input("--------------------------------\n請輸入查詢記錄的委員號: ")
    if memberId == "q":
       print("⚠ 停止查詢...")
       break
    check_member(root_dir, memberId)
+
+# while True:
+#    root_dir = input("請輸入CSV目錄: ")
+#    if os.path.exists(root_dir):
+#       break
+#    else:
+#       print("目錄文件夾不存在")
+#       continue
+
+# while True:
+#    print(f"--------------------------------------------\ncsv檔案根目錄為: {root_dir}")
+#    memberId = input("請輸入查詢記錄的委員號: ")
+#    if memberId == "q":
+#       print("⚠ 停止查詢...")
+#       break
+#    check_member(root_dir, memberId)
